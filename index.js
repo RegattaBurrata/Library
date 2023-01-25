@@ -6,11 +6,6 @@ const cardDiv = document.querySelector('.cardContainer');
 form.addEventListener('submit', addBookToLibrary);
 
 
-
-
-
-
-
 function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
@@ -23,9 +18,9 @@ function Book(title, author, pages, status) {
 function addBookToLibrary(e) {
     e.preventDefault();
     const card = document.createElement('div');
-    const del = document.createElement('button');
+    const del = document.createElement('img');
     del.className = 'delete';
-    del.textContent = 'DELETE';
+    del.src = 'trash.svg';
     card.className = 'card';
     cardDiv.appendChild(card);
     const newBook = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.value);
