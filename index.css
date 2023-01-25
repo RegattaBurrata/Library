@@ -8,6 +8,12 @@ body {
     font-weight: 500;
 }
 
+.header {
+   justify-self: center;
+   font-size: 40px;
+   font-weight: 800;
+}
+
 .container {
     display: grid;
     grid-template-columns: 50vw;
