@@ -1,0 +1,99 @@
+:root {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50vw;
+    grid-template-rows: auto 1fr;
+    gap: 60px;
+    justify-content: center;
+    /* justify-items: center; */
+    padding: 30px;
+}
+
+.newBook {
+    display: grid;
+    grid-template-columns: auto auto 60px 100px 100px;
+    gap: 40px;
+    justify-content: stretch;
+}
+
+.newBook div label {
+   margin-bottom: 10px;
+   font-weight: 600;
+}
+
+.newBook div input {
+    border-radius: 4px;
+    border: 1px solid #D1D1D1;
+    height: 30px;
+    padding: 4px 10px;
+    width: 100%;
+}
+
+.newBook div select {
+    height: 38px;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.newBook label {
+    display: block;
+}
+
+.addBook {
+    background: rgb(99, 187, 242);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 120px;
+    height: 38px;
+    align-self: end;
+    margin: 2px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cardContainer {
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+}
+
+.cardHeader {
+    font-weight: 600;
+}
+
+.card {
+    padding: 10px 10px 10px 0px;
+    border-bottom: 1px solid #D1D1D1;
+    align-items: center;
+}
+
+.delete {
+    background: rgb(218, 61, 76);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 38px;
+    align-self: end;
+    margin: 2px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cardHolder {
+    display: none;
+    font-style: italic;
+}
