@@ -113,3 +113,7 @@ body {
     display: none;
     font-style: italic;
 }
+
+.newBook div input.error {
+    border: 1px solid red;
+}

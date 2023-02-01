@@ -1,16 +1,21 @@
 
 
 const form = document.querySelector('.newBook');
+const inputTitle = document.getElementById('title');
+const inputAuthor = document.getElementById('author');
+const inputPages = document.getElementById('pages');
 const cardDiv = document.querySelector('.cardContainer');
 
-form.addEventListener('submit', addBookToLibrary);
+// form.addEventListener('submit', addBookToLibrary);
 
 
-function Book(title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
 }
 
 
@@ -45,4 +50,42 @@ function createCard(item) {
 function deleteItem(e) {
     console.log(e);
     e.target.parentNode.remove();
+}
+
+//error/validation handling
+
+form.addEventListener('submit', (e) => {
+    if (!inputTitle.validity.valid) {
+        e.preventDefault();
+        showError();
+    } else if (!inputAuthor.validity.valid) {
+        e.preventDefault();
+        showError();
+    } else if (!inputPages.validity.valid) {
+        e.preventDefault();
+        showError();
+    }
+    else {
+        addBookToLibrary(e);
+    }
+})
+
+inputTitle.addEventListener('input', (e) => inputTitle.className = '');
+inputAuthor.addEventListener('input', (e) => inputAuthor.className = '');
+inputPages.addEventListener('input', (e) => inputPages.className = '')
+
+function showError() {
+    if (!inputTitle.validity.valid) {
+        inputTitle.className = 'error'
+        console.log('need title')
+    } else if (!inputAuthor.validity.valid) {
+        inputAuthor.className = 'error'
+        console.log('need author')
+    } else if (!inputPages.validity.valid) {
+        console.log('need pages')
+        inputPages.className = 'error'
+    }
+    else {
+        
+    }
 }
